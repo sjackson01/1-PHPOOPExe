@@ -11,6 +11,12 @@ class Recipe
     public $tag = array();
     public $source = "Alina Holligan";
 
+    //Add $title setter
+    public function setTitle($title)
+    {
+    //Object property / argument 
+       $this->title = ucwords($title); 
+    }
     //Create functiont hat will display recipe title and source
     public function displayRecipe()
     {   //$this->title is one variable 
@@ -21,7 +27,9 @@ class Recipe
 //Instantiate object
 $recipe1 = new Recipe();
 $recipe1->source = "Grandma Holligan ";
-$recipe1->title = "My First Recipe";
+//Call setTitle and pass in lowercase title 
+echo $recipe1->setTitle("my first recipe");
+
 
 //Instantiate second object
 $recipe2 = new Recipe();
