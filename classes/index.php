@@ -12,9 +12,21 @@ class Recipe
     public $source = "Alina Holligan";
 
 }
-//Instantiate object and store in variable
+//Instantiate object
 $recipe1 = new Recipe();
 
-var_dump($recipe1);
+//Access object properties by referncing its name and the property
+//Entire reference is one variable
+echo $recipe1->source;
+
+//Set the property
+$recipe1->source = "Grandma Holligan";
+
+//Create second object
+$recipe2 = new Recipe();
+$recipe2->source = "Bettery Crocker";
+Echo $recipe1->source;
+Echo $recipe2->source;
+
 
 ?>
