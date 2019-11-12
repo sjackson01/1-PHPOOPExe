@@ -11,6 +11,12 @@ class Recipe
     public $tag = array();
     public $source = "Alina Holligan";
 
+    //Create functiont hat will display recipe title and source
+    public function displayRecipe()
+    {   //$this->title is one variable 
+       return $this->title . " by " . $this->source;
+    }
+
 }
 //Instantiate object
 $recipe1 = new Recipe();
