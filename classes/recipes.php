@@ -54,6 +54,11 @@ class Recipe
         );
     }
 
+    public function getIngredients()
+    {
+        return $this->ingredients;
+    }
+
     //Create functiont hat will display recipe title and source
     public function displayRecipe()
     {   //$this->title is one variable 
