@@ -20,19 +20,16 @@ class Recipe
 }
 //Instantiate object
 $recipe1 = new Recipe();
+$recipe1->source = "Grandma Holligan ";
+$recipe1->title = "My First Recipe";
 
-//Access object properties by referncing its name and the property
-//Entire reference is one variable
-echo $recipe1->source;
-
-//Set the property
-$recipe1->source = "Grandma Holligan";
-
-//Create second object
+//Instantiate second object
 $recipe2 = new Recipe();
 $recipe2->source = "Bettery Crocker";
-Echo $recipe1->source;
-Echo $recipe2->source;
+$recipe2->title = "My Second Recipe";
 
+//Call display recipe method on both recipe objects
+echo $recipe1->displayRecipe();
+echo $recipe2->displayRecipe();
 
 ?>
