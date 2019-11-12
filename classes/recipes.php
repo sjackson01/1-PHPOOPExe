@@ -1,17 +1,16 @@
 <?php
 
-//Create Class
 class Recipe
 {
-    //Add property to our recipe class
+    //Define Properties
     private $title;
-    public $ingredients =array();
-    public $instructions = array();
-    public $yeild;
-    public $tag = array();
-    public $source = "Alina Holligan";
+    private $ingredients =array();
+    private $instructions = array();
+    private $yeild;
+    private $tag = array();
+    private $source = "Alina Holligan";
 
-    //Define measurments
+    //Define measurments property
     private $measurements = array( 
         "tsp",
         "tbsp",
@@ -20,23 +19,23 @@ class Recipe
         "fl oz",
         "pint",
         "quart",
-        "gallon"
+        "gallon",
     );
 
-    //Add $title setter
+    //Set title format
     public function setTitle($title)
     {
     //Object property / argument 
        $this->title = ucwords($title); 
     }
-
+    //Get title 
     public function getTitle()
     {
         return $this->title;      
     }
 
-    //Add ingredient method
-    public function addInggredient($item, $amount = null, $measure = null)
+    //Set addIngredient method to add ingredients to array  
+    public function addIngredient($item, $amount = null, $measure = null)
     {   
         //if $amount != null !=float !=int exit and display type and user input
         if($amount != null && !is_float($amount) && !is_int($amount)){
@@ -53,13 +52,62 @@ class Recipe
             "measure" => strtolower($measure),
         );
     }
-
+    
+    //Get ingredients
     public function getIngredients()
     {
         return $this->ingredients;
     }
 
-    //Create functiont hat will display recipe title and source
+    //Set string into instructions array 
+    public function addInstructions($string)
+    {
+        $this->instructions[] = $string;
+    }
+    
+    //Get instructions 
+    public function getInstructions()
+    {
+        return $this->instructions;
+    }
+
+    //Set tags into $tags array
+    public function addTag($tag)
+    {
+        $this->tags[] = strtolower($tag);
+    }
+
+    //Get tags
+    public function getTag()
+    {
+        return $this->tags;
+    }
+
+    //Set yeild
+    public function setYeild($yeild)
+    {
+        $this->yeild = $yeild;
+    }
+
+    //Get yeild 
+    public function getYeild()
+    {
+        return $this->yeild;
+    }
+
+    //Set source 
+    public function setSource($source)
+    {
+        $this->source = ucwords($source);
+    }
+    
+    //Get source
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    //Create function that will display recipe title and source
     public function displayRecipe()
     {   //$this->title is one variable 
        return $this->title . " by " . $this->source;
